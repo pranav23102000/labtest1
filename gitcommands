@@ -1,0 +1,260 @@
+labuser@labuser-virtual-machine:~$ mkdir test1
+mkdir: cannot create directory ‘test1’: File exists
+labuser@labuser-virtual-machine:~$ cd test1
+labuser@labuser-virtual-machine:~/test1$ git init
+Reinitialized existing Git repository in /home/labuser/test1/.git/
+labuser@labuser-virtual-machine:~/test1$ echo "test1" > test1
+labuser@labuser-virtual-machine:~/test1$ git status
+On branch master
+nothing to commit, working tree clean
+labuser@labuser-virtual-machine:~/test1$ git add .
+labuser@labuser-virtual-machine:~/test1$ git commit -m "change1"
+On branch master
+nothing to commit, working tree clean
+labuser@labuser-virtual-machine:~/test1$ git remote add origin https://github.com/PRANAV879/labtest1.git
+error: remote origin already exists.
+labuser@labuser-virtual-machine:~/test1$ git remote -v
+origin	https://github.com/pranav23102000/labtest1.git (fetch)
+origin	https://github.com/pranav23102000/labtest1.git (push)
+labuser@labuser-virtual-machine:~/test1$ git push -u origin master
+Username for 'https://github.com': pranav23102000
+Password for 'https://pranav23102000@github.com': 
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 440 bytes | 440.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/pranav23102000/labtest1.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+labuser@labuser-virtual-machine:~/test1$ ls
+test1
+labuser@labuser-virtual-machine:~/test1$ nano test1
+labuser@labuser-virtual-machine:~/test1$ 
+labuser@labuser-virtual-machine:~/test1$ git add .
+labuser@labuser-virtual-machine:~/test1$ git commit -m "change2"
+[master ff4f60d] change2
+ 1 file changed, 2 insertions(+)
+ create mode 100644 test1C
+labuser@labuser-virtual-machine:~/test1$ git push -u origin master
+Username for 'https://github.com': pranav23102000@gmail.com
+Password for 'https://pranav23102000@gmail.com@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/pranav23102000/labtest1.git/'
+labuser@labuser-virtual-machine:~/test1$ git push -u origin master
+Username for 'https://github.com': pranav23102000
+Password for 'https://pranav23102000@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 278 bytes | 278.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/pranav23102000/labtest1.git
+   f7c7963..ff4f60d  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+labuser@labuser-virtual-machine:~/test1$ git branch
+* master
+labuser@labuser-virtual-machine:~/test1$ git branch develops1
+labuser@labuser-virtual-machine:~/test1$ git checkout develops1
+Switched to branch 'develops1'
+labuser@labuser-virtual-machine:~/test1$ git branch
+* develops1
+  master
+labuser@labuser-virtual-machine:~/test1$ echo "test3" > file1
+labuser@labuser-virtual-machine:~/test1$ echo "test4" > file 2
+labuser@labuser-virtual-machine:~/test1$ ls -li
+total 16
+6160998 -rw-rw-r-- 1 labuser labuser 8 Dec 14 07:02 file
+6160997 -rw-rw-r-- 1 labuser labuser 6 Dec 14 07:02 file1
+6162017 -rw-rw-r-- 1 labuser labuser 6 Dec 14 06:40 test1
+6160988 -rw-rw-r-- 1 labuser labuser 7 Dec 14 06:55 test1C
+labuser@labuser-virtual-machine:~/test1$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+labuser@labuser-virtual-machine:~/test1$ git add .
+labuser@labuser-virtual-machine:~/test1$ git commit -m "change4"
+[develops1 17da065] change4
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file
+ create mode 100644 file1
+labuser@labuser-virtual-machine:~/test1$ git push u origin deveops1
+error: src refspec origin does not match any
+error: src refspec deveops1 does not match any
+error: failed to push some refs to 'u'
+labuser@labuser-virtual-machine:~/test1$ git push -u origin develops1
+Username for 'https://github.com': pranav23102000
+Password for 'https://pranav23102000@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 347 bytes | 347.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'develops1' on GitHub by visiting:
+remote:      https://github.com/pranav23102000/labtest1/pull/new/develops1
+remote: 
+To https://github.com/pranav23102000/labtest1.git
+ * [new branch]      develops1 -> develops1
+Branch 'develops1' set up to track remote branch 'develops1' from 'origin'.
+labuser@labuser-virtual-machine:~/test1$ git push -u origin develops1
+Username for 'https://github.com': pranav23102000
+Password for 'https://pranav23102000@github.com': 
+Branch 'develops1' set up to track remote branch 'develops1' from 'origin'.
+Everything up-to-date
+labuser@labuser-virtual-machine:~/test1$ git branch
+* develops1
+  master
+labuser@labuser-virtual-machine:~/test1$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+labuser@labuser-virtual-machine:~/test1$ git merge develops1
+Updating ff4f60d..17da065
+Fast-forward
+ file  | 1 +
+ file1 | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file
+ create mode 100644 file1
+labuser@labuser-virtual-machine:~/test1$ git log -p
+commit 17da065d0bbad73269b2c74ea307a47a5a8c72ef (HEAD -> master, origin/develops1, develops1)
+Author: David Robichaud <david.robichaud@skillsoft.com>
+Date:   Sat Dec 14 07:03:40 2024 -0500
+
+    change4
+
+diff --git a/file b/file
+new file mode 100644
+index 0000000..7edae38
+--- /dev/null
++++ b/file
+@@ -0,0 +1 @@
++test4 2
+diff --git a/file1 b/file1
+new file mode 100644
+index 0000000..df6b0d2
+--- /dev/null
++++ b/file1
+@@ -0,0 +1 @@
++test3
+
+commit ff4f60dfdbc6bd08851a220351f1a059ab05e99e (origin/master)
+Author: David Robichaud <david.robichaud@skillsoft.com>
+Date:   Sat Dec 14 06:56:08 2024 -0500
+
+    change2
+
+diff --git a/test1C b/test1C
+new file mode 100644
+index 0000000..4a19b05
+--- /dev/null
++++ b/test1C
+@@ -0,0 +1,2 @@
++test2
++
+
+commit f7c7963eede94401259ce9f3e410cd90098f4374
+Author: David Robichaud <david.robichaud@skillsoft.com>
+Date:   Sat Dec 14 06:04:49 2024 -0500
+
+    change1
+
+diff --git a/test1 b/test1
+index 9daeafb..a5bce3f 100644
+--- a/test1
++++ b/test1
+@@ -1 +1 @@
+-test
++test1
+
+commit 2ffdc6f787f3e7e9ff2c427c8a316219e41cb909
+Author: David Robichaud <david.robichaud@skillsoft.com>
+Date:   Sat Dec 14 04:51:21 2024 -0500
+
+    change1
+
+diff --git a/test1 b/test1
+new file mode 100644
+index 0000000..9daeafb
+--- /dev/null
++++ b/test1
+@@ -0,0 +1 @@
++test
+labuser@labuser-virtual-machine:~/test1$ git log --oneline
+17da065 (HEAD -> master, origin/develops1, develops1) change4
+ff4f60d (origin/master) change2
+f7c7963 change1
+2ffdc6f change1
+labuser@labuser-virtual-machine:~/test1$ cd
+labuser@labuser-virtual-machine:~$ git clone https://github.com/pranav23102000/labtest1.git
+Cloning into 'labtest1'...
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 13 (delta 0), reused 13 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (13/13), done.
+labuser@labuser-virtual-machine:~$ ls -li
+total 52
+6029410 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Desktop
+6029414 drwxr-xr-x 3 labuser labuser 4096 Dec 15  2023 Documents
+6029411 drwxr-xr-x 2 labuser labuser 4096 Dec 18  2023 Downloads
+6036475 -rw-rw-r-- 1 labuser labuser   53 Dec 18  2023 execute.yml
+6031789 drwxrwxr-x 3 labuser labuser 4096 Dec 14 07:15 labtest1
+6029415 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Music
+6029416 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Pictures
+6029413 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Public
+6030259 drwxrwxr-x 2 labuser labuser 4096 Dec 18  2023 repos
+6029322 drwx------ 6 labuser labuser 4096 Dec 15  2023 snap
+6029412 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Templates
+6161985 drwxrwxr-x 3 labuser labuser 4096 Dec 14 07:08 test1
+6029418 drwxr-xr-x 2 labuser labuser 4096 Sep 12  2023 Videos
+labuser@labuser-virtual-machine:~$ cd labtest1
+labuser@labuser-virtual-machine:~/labtest1$ ls
+test1  test1C
+labuser@labuser-virtual-machine:~/labtest1$ mkdir dev1
+labuser@labuser-virtual-machine:~/labtest1$ cd dev1
+labuser@labuser-virtual-machine:~/labtest1/dev1$ git pull https://github.com/pranav23102000/labtest1.git
+From https://github.com/pranav23102000/labtest1
+ * branch            HEAD       -> FETCH_HEAD
+Already up to date.
+labuser@labuser-virtual-machine:~/labtest1/dev1$ git init
+Initialized empty Git repository in /home/labuser/labtest1/dev1/.git/
+labuser@labuser-virtual-machine:~/labtest1/dev1$ git remote -v
+labuser@labuser-virtual-machine:~/labtest1/dev1$ git pull https://github.com/pranav23102000/labtest1.git
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 9 (delta 0), reused 9 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (9/9), 666 bytes | 222.00 KiB/s, done.
+From https://github.com/pranav23102000/labtest1
+ * branch            HEAD       -> FETCH_HEAD
+labuser@labuser-virtual-machine:~/labtest1/dev1$ git branch
+* master
+labuser@labuser-virtual-machine:~/labtest1/dev1$ ls -li
+total 8
+6032894 -rw-rw-r-- 1 labuser labuser 6 Dec 14 07:18 test1
+6032895 -rw-rw-r-- 1 labuser labuser 7 Dec 14 07:18 test1C
+labuser@labuser-virtual-machine:~/labtest1/dev1$ git branch m1
+labuser@labuser-virtual-machine:~/labtest1/dev1$ git checkout m1
+Switched to branch 'm1'
+labuser@labuser-virtual-machine:~/labtest1/dev1$ echo "apple" > fruit
+labuser@labuser-virtual-machine:~/labtest1/dev1$ ls
+fruit  test1  test1C
+labuser@labuser-virtual-machine:~/labtest1/dev1$ git checkout master
+Switched to branch 'master'
+labuser@labuser-virtual-machine:~/labtest1/dev1$ ls
+fruit  test1  test1C
+labuser@labuser-virtual-machine:~/labtest1/dev1$ git checkout m1
+Switched to branch 'm1'
+labuser@labuser-virtual-machine:~/labtest1/dev1$ ls
+fruit  test1  test1C
+labuser@labuser-virtual-machine:~/labtest1/dev1$ git rebase master
+Current branch m1 is up to date.
+labuser@labuser-virtual-machine:~/labtest1/dev1$ 
+
+
